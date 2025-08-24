@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: #111; /* simple dark background */
+      color: white;
+    }
+    .content {
+      filter: blur(10px);
+      transition: filter 1s ease;
+      pointer-events: none; /* prevent interaction until revealed */
+    }
+    .content.revealed {
+      filter: blur(0);
+      pointer-events: auto;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    p {
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .overlay.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
 
+  <div id="overlay" class="overlay">Click to reveal the infos</div>
+
+  <div id="content" class="content">
+    <img src="face.png" alt="Face image">
+    <p>Names: James Willaim Dumay</p>
+    <p>Age: ~40</p>
+    <p>Country: Australia</p>
+    <p>State: New South Wales</p>
+    <p>City: Sydney</p>
+    <p>Job: software engineer</p>
+    <p>Work: atlassian</p>
+    <p>Emails: james.w.dumay@gmail.com | jameswdumay@gmail.com | james@atlassian /in 50+ databases on all emails\</p>
+    <p>Common passwords: delete13 | jai7913 | cameo7913</p>
+    <p>Phone numbers: +61 407 25• •97‬ | 617-500-7547</p>
+    <p>College: Northern Beaches Secondary College</p>
+    <p>High school: Bellingen High School</p>
+    <p>Facebook: <a href="https://www.facebook.com/jameswdumay" target="_blank">facebook.com/jameswdumay</a></p>
+    <p>Twitter / x: https://x.com/i386 DELETED</p>
+    <p>Github: <a href="https://github.com/i386" target="_blank">github.com/i386</a></p>
+    <p>Linkedin: <a href="https://au.linkedin.com/in/jameswdumay" target="_blank">linkedin.com/in/jameswdumay</a></p>
+    <p>Tiktok: <a href="https://www.tiktok.com/@user461uj8jmb7" target="_blank">@user461uj8jmb7</a></p>
+    <p>Youtube: <a href="https://www.youtube.com/@lollinizer/" target="_blank">youtube.com/@lollinizer</a></p>
+    <p>Pinterest: <a href="https://www.pinterest.com/hatescake/" target="_blank">pinterest.com/hatescake</a></p>
+    <p>Orsond related email: orsondmc@gmail.com</p> 
+  </div>
+
+  <video id="bgMusic" src="xd.mp4" hidden loop></video>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+    const content = document.getElementById("content");
+    const video = document.getElementById("bgMusic");
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      content.classList.add("revealed");
+      video.play();
+    });
+  </script>
+</body>
+</html>
